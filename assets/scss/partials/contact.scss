@@ -1,0 +1,133 @@
+
+@use "variables" as *;
+
+.backgroundContactSection{
+    background-color: $secondaryColor;
+
+    .contact{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 1rem;
+      
+      .contact__Heading{
+        font-size: 2.8rem;
+        color: $whiteColor;
+        font-weight: 500;
+        letter-spacing: 2px;
+        border-bottom: 1px solid $primaryColor;
+        grid-column: 1/3;
+        margin-top: 5rem;
+      }
+
+      .contact__content{
+        padding: 5rem 0;
+        
+        .contact__media{
+          display: flex;
+          justify-content: start;
+          align-items: flex-start;
+          gap: 7rem;
+
+          .contact__contentEmail{
+          
+            .contact__contentEmailHeading{
+              font-size: 1.3rem;
+              color: $whiteColor;
+              font-weight: 400;
+              letter-spacing: 2px;
+              margin-bottom: 1rem;
+            }
+            .contact__mediaIcon{
+              width: 3rem;
+           }
+            
+          }
+
+          .contact__contentSocialMedia{
+            display: flex;
+            flex-direction: column;
+           
+            .contact__mediaIcon{
+              width: 3rem;
+              margin-right: 1rem;
+              border-radius: 1rem;
+           }
+
+           .contact__contentSocialMediaHeading{
+              font-size: 1.3rem;
+              color: $whiteColor;
+              font-weight: 400;
+              letter-spacing: 2px;
+              margin-bottom: 1rem;
+           }
+          }
+        }
+
+        .contact__contentSubheading{
+          font-size: 2.3rem;
+          font-weight: 500;
+          color: $primaryColor;
+          letter-spacing: 2px;
+          margin-bottom: 2rem;
+        }
+    }
+
+    .contact__form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 2rem 0;
+      gap: 0.8rem;
+
+      .contact__formHeading{
+        color: $primaryColor;
+        font-size: 1.7rem;
+        letter-spacing: 2px;
+        font-weight: 400;
+      }
+
+     input{
+      padding: 1rem 0.5rem;
+      border-radius: 1rem;
+      border: none;
+      outline: none;
+      transition: font-size 0.2s ease;
+      height: 3rem;
+     }
+
+     input:not(:placeholder-shown) {
+      font-size: 1.2rem;
+      letter-spacing: 1.5px;
+    }
+
+    label{
+      color: $whiteColor;
+      font-size: 1.3rem;
+      font-weight: 200;
+      letter-spacing: 2px;
+    }
+
+     textarea{
+       border-radius: 1rem;
+       padding: 1rem 0.5rem;
+       outline: none;
+       margin-bottom: 2rem;
+     }
+
+     textarea:not(:placeholder-shown) {
+      font-size: 1.2rem;
+    }
+
+    .contact__btn{
+      margin-top: 0;
+      width: 50%;
+      box-shadow: none;
+    
+      &::before{
+        background: linear-gradient(to right, $primaryColor 0%, $blackColor 40%, $blackColor 60%, $primaryColor 100%);
+      }
+    }
+    }
+  }
+}

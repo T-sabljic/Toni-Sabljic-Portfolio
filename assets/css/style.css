@@ -1,0 +1,559 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 15px;
+}
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: rgb(168, 160, 160);
+}
+
+body {
+  background-color: #FFF9F9;
+  line-height: 1.5;
+  font-size: 100%;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+.heading_underscore {
+  color: #d1be47;
+}
+
+.headings {
+  font-size: 1.8rem;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+}
+
+.btn {
+  margin-top: 3rem;
+  font-size: 1.3rem;
+  padding: 1rem 5rem;
+  border: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 1s ease;
+  position: relative;
+  color: white;
+  z-index: 1;
+  border-radius: 3rem;
+  overflow: hidden;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(90deg, rgba(209, 190, 71, 0.67) 0%, rgb(84, 80, 80) 100%);
+}
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.nav__clock {
+  width: 5rem;
+  height: 5rem;
+  border: 0.2rem solid white;
+  border-radius: 50%;
+  margin-right: 3rem;
+  position: relative;
+}
+.nav__clock .nav__clockPoint {
+  width: 0.4rem;
+  height: 0.4rem;
+  background-color: #d1be47;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.nav__clock .hour {
+  font-size: 0.9rem;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+}
+.nav__clock .hour-3 {
+  top: 1.6rem;
+  right: 0.2rem;
+}
+.nav__clock .hour-6 {
+  bottom: -0.1rem;
+  left: 2.1rem;
+}
+.nav__clock .hour-9 {
+  left: 0.2rem;
+  top: 1.6rem;
+}
+.nav__clock .hour-12 {
+  left: 1.9rem;
+  top: -0.1rem;
+}
+.nav__clock .nav__clockMinuteWrapper {
+  width: 2.9rem;
+  height: 2.9rem;
+  position: absolute;
+  top: 13.5px;
+  left: 13.5px;
+  border-radius: 50%;
+}
+.nav__clock .nav__clockMinuteWrapper .nav__clockMinuteHand {
+  position: relative;
+}
+.nav__clock .nav__clockMinuteWrapper .nav__clockMinuteHand .nav__minuteHand {
+  width: 0.1rem;
+  height: 1.6rem;
+  background-color: #d1be47;
+  position: absolute;
+  left: 1.4rem;
+}
+.nav__clock .nav__clockHourWrapper {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  top: 17.5px;
+  left: 17.5px;
+  border-radius: 50%;
+}
+.nav__clock .nav__clockHourWrapper .nav__clockHourHand {
+  position: relative;
+}
+.nav__clock .nav__clockHourWrapper .nav__clockHourHand .nav__hourHand {
+  width: 2px;
+  height: 1.2rem;
+  background-color: #d1be47;
+  position: absolute;
+  left: 1.2rem;
+}
+.nav__clock .nav__clockSecondWrapper {
+  width: 3.2rem;
+  height: 3.2rem;
+  position: absolute;
+  top: 11.5px;
+  left: 11.5px;
+  border-radius: 50%;
+}
+.nav__clock .nav__clockSecondWrapper .nav__clockSecondHand {
+  position: relative;
+}
+.nav__clock .nav__clockSecondWrapper .nav__clockSecondHand .nav__secondHand {
+  width: 1px;
+  height: 1.6rem;
+  background-color: #d1be47;
+  position: absolute;
+  left: 1.5rem;
+}
+
+header {
+  position: relative;
+  padding-top: 60px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/ts_bckgImg.png") no-repeat center center/cover;
+  width: 100%;
+  height: 100vh;
+}
+header .header__content {
+  position: absolute;
+  top: 15rem;
+  left: 10rem;
+}
+header .header__content .header__contentInfo {
+  width: 7rem;
+}
+header .header__content .header__contentInfo .toni_img {
+  width: 100%;
+  height: auto;
+  border-top: 2px solid #d1be47;
+  border-right: 2px solid #d1be47;
+  border-bottom: 2px solid #111723;
+  border-left: 2px solid #111723;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+header .header__content .header__contentText {
+  margin-top: 2.5rem;
+}
+header .header__content .header__contentText .header__contentTextAbout {
+  width: 25rem;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  height: 9rem;
+  color: white;
+}
+header .nav {
+  display: flex;
+}
+header .nav .nav__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: 0.8s ease;
+  background: rgba(0, 0, 0, 0.5);
+}
+header .nav .nav__content.nav-underline {
+  border-bottom: 2px solid white;
+}
+header .nav .nav__content .nav__logo {
+  margin-left: 3rem;
+}
+header .nav .nav__content .nav__list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  width: auto;
+  margin-left: 7rem;
+}
+header .nav .nav__content .nav__list .nav__listItems {
+  border: 1px solid black;
+  padding: 5px 25px;
+  transition: 1s ease;
+}
+header .nav .nav__content .nav__list .nav__listItems .nav__listLinks {
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  letter-spacing: 2px;
+  transition: 0.4s ease;
+}
+header .nav .nav__content .nav__list .nav__listItems .nav__listLinks:hover {
+  color: #d1be47;
+}
+header .nav .nav__content .nav__weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header .nav .nav__content .nav__weather .nav__weatherInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+header .nav .nav__content .nav__weather .nav__weatherInfo .nav__weatherCity {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+header .nav .nav__content .nav__weather .nav__weatherInfo .nav__temp {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
+  padding-top: 5px;
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5rem;
+  height: 100vh;
+}
+.about .about__content {
+  width: 45%;
+}
+.about .about__content .about__heading {
+  margin: 0 0 2rem 2rem;
+}
+.about .about__content .about__headingText {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.about .about__content .about__text {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.about .about__projects {
+  width: 40%;
+}
+.about .about__projects .about__projectsHeading {
+  margin: 0 0 4rem 2rem;
+}
+.about .about__projects .about__projectsMedia {
+  display: flex;
+  flex-direction: column;
+}
+.about .about__projects .about__projectsMedia .about__projectsImg1 {
+  width: 100%;
+  border-top: 2px solid #d1be47;
+  border-right: 2px solid #d1be47;
+}
+.about .about__projects .about__projectsMedia .about__projectsImg2 {
+  width: 100%;
+  border-left: 2px solid #d1be47;
+  border-bottom: 2px solid #d1be47;
+}
+.about .about__projects .about__projectsMedia .line {
+  width: 70%;
+  height: 3px;
+  background-color: #d1be47;
+  margin: 2rem 0;
+}
+
+.skills {
+  background-color: #111723;
+  padding: 8rem 0rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.skills .skills__headingH3 {
+  margin-left: 6rem;
+  color: white;
+  letter-spacing: 3px;
+}
+.skills .skills__lang {
+  height: 2rem;
+  display: flex;
+}
+.skills .skills__lang .skills__heading {
+  width: 12rem;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+.skills .skills__lang .skills__parentPrcent {
+  width: 800px;
+  border: 2px solid white;
+}
+.skills .skills__lang .skills__parentPrcent .skills__prcent {
+  height: 100%;
+  background-color: #d1be47;
+}
+.skills .skills__lang .skills__parentPrcent .skills__prcent p {
+  text-align: right;
+  color: #111723;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+.skills .skills__lang .skills__parentPrcent .skill__langProgres {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.backgroundContactSection {
+  background-color: #111723;
+}
+.backgroundContactSection .contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 1rem;
+}
+.backgroundContactSection .contact .contact__Heading {
+  font-size: 2.8rem;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #d1be47;
+  grid-column: 1/3;
+  margin-top: 5rem;
+}
+.backgroundContactSection .contact .contact__content {
+  padding: 5rem 0;
+}
+.backgroundContactSection .contact .contact__content .contact__media {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  gap: 7rem;
+}
+.backgroundContactSection .contact .contact__content .contact__media .contact__contentEmail .contact__contentEmailHeading {
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+.backgroundContactSection .contact .contact__content .contact__media .contact__contentEmail .contact__mediaIcon {
+  width: 3rem;
+}
+.backgroundContactSection .contact .contact__content .contact__media .contact__contentSocialMedia {
+  display: flex;
+  flex-direction: column;
+}
+.backgroundContactSection .contact .contact__content .contact__media .contact__contentSocialMedia .contact__mediaIcon {
+  width: 3rem;
+  margin-right: 1rem;
+  border-radius: 1rem;
+}
+.backgroundContactSection .contact .contact__content .contact__media .contact__contentSocialMedia .contact__contentSocialMediaHeading {
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+.backgroundContactSection .contact .contact__content .contact__contentSubheading {
+  font-size: 2.3rem;
+  font-weight: 500;
+  color: #d1be47;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+.backgroundContactSection .contact .contact__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem 0;
+  gap: 0.8rem;
+}
+.backgroundContactSection .contact .contact__form .contact__formHeading {
+  color: #d1be47;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+.backgroundContactSection .contact .contact__form input {
+  padding: 1rem 0.5rem;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  transition: font-size 0.2s ease;
+  height: 3rem;
+}
+.backgroundContactSection .contact .contact__form input:not(:placeholder-shown) {
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+}
+.backgroundContactSection .contact .contact__form label {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+.backgroundContactSection .contact .contact__form textarea {
+  border-radius: 1rem;
+  padding: 1rem 0.5rem;
+  outline: none;
+  margin-bottom: 2rem;
+}
+.backgroundContactSection .contact .contact__form textarea:not(:placeholder-shown) {
+  font-size: 1.2rem;
+}
+.backgroundContactSection .contact .contact__form .contact__btn {
+  margin-top: 0;
+  width: 50%;
+  box-shadow: none;
+}
+.backgroundContactSection .contact .contact__form .contact__btn::before {
+  background: linear-gradient(to right, #d1be47 0%, black 40%, black 60%, #d1be47 100%);
+}
+
+.footer {
+  background: linear-gradient(to right, #111723, black, #111723);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.modal {
+  width: 30rem;
+  background-color: white;
+  padding: 2rem 0;
+  border-radius: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal .modal__form {
+  display: flex;
+  padding: 2rem 2rem;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+}
+.modal .modal__form input {
+  padding: 0.7rem 0.2rem;
+  font-size: 1.1rem;
+  letter-spacing: 1.5px;
+}
+.modal .modal__form textarea:placeholder-shown {
+  font-size: 1.1rem;
+  padding: 0.7rem 0.3rem;
+  letter-spacing: 1.5px;
+}
+.modal .modal__form textarea:not(placeholder-shown) {
+  font-size: 1.1rem;
+  padding: 0.7rem 0.3rem;
+  letter-spacing: 1.5px;
+}
+.modal .modal__form .modal__formBtn {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  padding: 0.8rem 5rem;
+}
+.modal .modal__form label {
+  color: black;
+  font-size: 1.3rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+.modal .modal__icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.modal .modal__icons a .modal__whatsappIcon {
+  width: 3rem;
+  border-radius: 0.7rem;
+}
+.modal .modal__icons a .modal__phoneIcon {
+  width: 3rem;
+  border-radius: 0.7rem;
+}
+.modal .modal__closeBtn {
+  float: right;
+  margin-right: 2rem;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

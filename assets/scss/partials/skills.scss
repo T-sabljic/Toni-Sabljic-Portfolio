@@ -1,0 +1,56 @@
+
+@use "variables" as *;
+
+
+.skills{
+    background-color: $secondaryColor;
+    padding: 8rem 0rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 3rem;
+
+    .skills__headingH3{
+        margin-left: 6rem;
+        color: $whiteColor;
+        letter-spacing: 3px;
+    }
+   
+    .skills__lang{
+            height: 2rem;
+            display: flex;
+            
+
+        .skills__heading{
+            width: 12rem;
+            text-align: center;
+            color: $whiteColor;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        .skills__parentPrcent{
+            width: 800px;
+            border: 2px solid $whiteColor;
+
+            .skills__prcent{
+                height: 100%;
+                background-color:$primaryColor;
+
+                p{
+                    text-align: right;
+                    color: $secondaryColor;
+                    font-size: 1.3rem;
+                    letter-spacing: 2px;
+                    font-weight: 600;
+                }
+                
+            }
+
+            .skill__langProgres{
+                color: $whiteColor;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}

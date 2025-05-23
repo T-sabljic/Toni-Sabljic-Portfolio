@@ -1,0 +1,13 @@
+
+
+@use "variables" as *;
+
+
+.footer {
+    background: linear-gradient(to right, $secondaryColor, $blackColor, $secondaryColor); // dark blue to black
+    color: $whiteColor; // golden accent color
+    text-align: center;
+    padding: 3rem 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }

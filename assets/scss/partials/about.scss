@@ -1,0 +1,70 @@
+
+@use "variables" as *;
+
+.about{
+    display: flex;
+    justify-content: space-between;
+    //align-items: center;
+    margin-top: 5rem;
+    height: 100vh;
+
+    .about__content{
+        width: 45%;
+        
+        .about__heading{
+            margin: 0 0 2rem 2rem;
+
+    
+        }
+        .about__headingText{
+            font-family: "Poppins", sans-serif;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+    
+        .about__text{
+            font-family: "Nunito Sans", sans-serif;
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+    }
+
+    .about__projects{
+
+        width: 40%;
+
+        .about__projectsHeading{
+            margin: 0 0 4rem 2rem;
+
+        }
+
+        .about__projectsMedia{
+            
+            display: flex;
+            flex-direction: column;
+           
+
+            .about__projectsImg1{
+                width: 100%;
+                border-top: 2px solid $primaryColor;
+                border-right: 2px solid $primaryColor;
+                
+            }
+            .about__projectsImg2{
+               width: 100%;
+               border-left: 2px solid $primaryColor;
+                border-bottom: 2px solid $primaryColor;
+            }
+
+            .line{
+                width: 70%;
+                height: 3px;
+                background-color: $primaryColor;
+                margin: 2rem 0;
+            }
+        }
+    }
+}
+
+

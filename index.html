@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Toni Sabljic | Web Developer Portfolio from Switzerland</title>
+    <meta name="description" content="Portfolio of Toni Sabljic, self-taught web developer based in Switzerland. Skilled in HTML, CSS, SASS, JavaScript,    
+     Figma, and Python. Open to IT roles and freelance projects." />
+    <meta name="keywords" content="Toni Sabljic, web developer, frontend developer, portfolio, HTML, CSS, JavaScript, Figma, Python, Switzerland, 
+     freelance, IT job" />
+    <meta name="author" content="Toni Sabljic" />
+    
+
+    <!------- CSS Link --------->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!------- Google Font Link --------->
+
+    <!----Space + Grotesk--->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+     
+    <!---- Nunito------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+    <!----Poppins----->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,
+    400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!----- Oswald -------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <!------------ Awesome Icon Link----------------------->
+    <!-- Umetni ovo unutar <head> taga -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+
+</head>
+<body>
+
+    <!------ HEADER AND NAV SECTION ----->
+    
+    <header class="header" id="home">
+
+        <section class="header__content">
+            <div class="header__contentInfo">
+                <img class="toni_img" src="assets/img/toni_img.png" alt="toni-img">
+            </div>
+            <div class="header__contentText">
+                <p class="header__contentTextAbout"></p>
+                <button type="button" class="header__contentBtn btn"><span>Free Consultation</span></button>
+            </div>
+            
+        </section>
+
+        <div class="modal">
+            <form class="modal__form" action="contact.php" method="POST">
+                <label for="name">Name</label>
+                <input type="text" name="name">
+                <label for="email">Email</label>
+                <input type="email" name="email">
+                <label for="message">Message</label>
+                <textarea name="message" rows="5"></textarea>
+                <button type="submit" class="btn modal__formBtn">Submit</button>
+            </form>
+            <div class="modal__icons">
+                <a href="tel:+41782029180"> <img class="modal__phoneIcon" src="assets/img/phone-icon.png" alt="phone-icon"></a>
+                <a href="https://wa.me/41782029280" target="_blank"><img class="modal__whatsappIcon" src="assets/img/whatsapp-icon.svg" alt="whatsapp-icon"></a>
+            </div>
+            <button class="modal__closeBtn">Close</button>
+        </div>
+
+        <nav class="nav">
+            <div class="nav__content">
+                <div class="nav__logo">
+                   <a href="index.html"><img src="assets/img/Ts_logo.png" alt="Logo-img"></a>
+                </div>
+                <ul class="nav__list">
+                    <li class="nav__listItems"> <a class="nav__listLinks" href="#home">Home</a></li>
+                    <li class="nav__listItems"> <a class="nav__listLinks" href="#about">About</a></li>
+                    <li class="nav__listItems"> <a class="nav__listLinks" href="#skills">Skills</a></li>
+                    <li class="nav__listItems"> <a class="nav__listLinks" href="#contact">Contact</a></li>
+                </ul>
+
+                <div class="nav__weather">
+                   <div class="nav__weatherInfo">
+                        <h5 class="nav__weatherCity"></h5>
+                        <p class="nav__temp"></p>
+                        <img class="nav__celsius" src="assets/img/nav_celsius.svg" alt="celsius-img">
+                   </div>
+                   
+                    <div class="nav__weatherIcon"></div>
+                </div>
+
+                <div class="nav__clock">
+                    <div class="nav__clockPoint"></div>
+                    <div class="hour hour-3">3</div>
+                    <div class="hour hour-6">6</div>
+                    <div class="hour hour-9">9</div>
+                    <div class="hour hour-12">12</div>
+
+                    <div class="nav__clockMinuteWrapper" id="minute__hand">
+                        <div class="nav__clockMinuteHand">
+                            <div class="nav__minuteHand"></div>
+                        </div>
+                    </div>
+
+                    <div class="nav__clockHourWrapper" id="hour__hand">
+                        <div class="nav__clockHourHand">
+                            <div class="nav__hourHand"></div>
+                        </div>
+                    </div>
+
+                    <div class="nav__clockSecondWrapper" id="second__hand">
+                        <div class="nav__clockSecondHand">
+                            <div class="nav__secondHand"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <!--------- ABOUT SECTION-------->
+
+    <section class="about container" id="about">
+
+        <div class="about__content">
+
+            <h3 class="about__heading headings"><span class="heading_underscore">_</span>About<span class="heading_underscore">_</span></h3>
+            <h5 class="about__headingText">
+                Inspired by challenges, focused on progress — here’s a bit more about me.
+            </h5>
+            <p class="about__text"> 
+                "
+                Behind every line of code, there’s a story shaped by curiosity, discipline, and a love for learning.
+                A lifelong athlete turned frontend developer who found the perfect balance between code, nature, and movement.
+                After playing football for over three decades, I’ve shifted my focus to exploring the outdoors — hiking,
+                cycling, and skiing are now a big part of my daily rhythm. That same energy and curiosity I had for sports,
+                I’ve channeled into learning web development.
+                I started with HTML and CSS/SCSS, moved through JavaScript,
+                and now I’m diving into web design and backend development with the same passion and openness to learning new things.
+                I enjoy building clean, responsive, and user-focused digital experiences, and I’m always excited to grow — one line of code at a time."
+            </p>
+        </div>
+
+        <div class="about__projects">
+
+           <h3 class="about__projectsHeading headings"><span class="heading_underscore">_</span>Projects<span class="heading_underscore">_</span></h3>
+           <div class="about__projectsMedia">
+              <div class="about__projectsImg1"><img src="./assets/img/projects_img1.png" alt="project-img"></div>
+              <div class="line"></div>
+              <div class="about__projectsImg2"><img src="./assets/img/projects_img2.png" alt="project-img"></div>
+           </div>
+
+        </div>
+
+    </section>
+
+
+    <!-------- SKILLS SECTION--------------->
+
+
+    <section class="skills" id="skills">
+
+        <h3 class="skills__headingH3 headings"><span class="heading_underscore">_</span>Skills<span class="heading_underscore">_</span></h3>
+        <div class="skills__lang">
+            <h3 class="skills__heading">HTML</h3>
+            <div class="skills__parentPrcent">
+                <div class="skills__prcent" data-max="0.9"></div>
+            </div>
+        </div>
+
+        <div class="skills__lang">
+            <h3 class="skills__heading">CSS</h3>
+            <div class="skills__parentPrcent">
+                <div class="skills__prcent" data-max="0.9"></div>
+            </div>
+        </div>
+
+        <div class="skills__lang">
+            <h3 class="skills__heading">SASS</h3>
+            <div class="skills__parentPrcent">
+                <div class="skills__prcent" data-max="0.8"></div>
+            </div>
+        </div>
+
+        <div class="skills__lang">
+            <h3 class="skills__heading">JavaScript</h3>
+            <div class="skills__parentPrcent">
+                <div class="skills__prcent" data-max="0.7"></div>
+            </div>
+        </div>
+
+        <div class="skills__lang">
+            <h3 class="skills__heading">React</h3>
+            <div class="skills__parentPrcent">
+                <div class="skills__prcent" data-max="0.4"></div>
+                <p class="skill__langProgres">Learning</p>
+            </div>
+        </div>
+
+        <div class="skills__lang">
+            <h3 class="skills__heading">Figma</h3>
+            <div class="skills__parentPrcent">
+                <div class="skills__prcent" data-max="0.4"></div>
+            </div>
+        </div>
+
+        <div class="skills__lang">
+            <h3 class="skills__heading">DaVinci Resolve</h3>
+            <div class="skills__parentPrcent">
+                <div class="skills__prcent" data-max="0.4"></div>
+            </div>
+        </div>
+
+        <div class="skills__lang">
+            <h3 class="skills__heading">GitHub</h3>
+            <div class="skills__parentPrcent">
+                <div class="skills__prcent" data-max="0.6"></div>
+            </div>
+        </div>
+
+        <div class="skills__lang">
+            <h3 class="skills__heading">Bootstrap</h3>
+            <div class="skills__parentPrcent">
+                <div class="skills__prcent" data-max="0.5"></div>
+            </div>
+        </div>
+
+        <div class="skills__lang">
+            <h3 class="skills__heading">Python</h3>
+            <div class="skills__parentPrcent">
+                <div class="skills__prcent" data-max="0.1"></div>
+                <p class="skill__langProgres">Learning</p>
+            </div>
+        </div>
+
+    </section>
+    <hr>
+    <!-------- CONNTACT SECTION ------------>
+
+    <section class="backgroundContactSection" id="contact">
+        
+       <div class="container contact">
+        <h2 class="contact__Heading">Do you have a project or job to discuss?</h2>
+        
+        <div class="contact__content">
+            <h3 class="contact__contentSubheading">Get in touch</h3>
+            <div class="contact__media">
+                <div class="contact__contentEmail">
+                    <h5 class="contact__contentEmailHeading">Write an Email<span class="heading_underscore">_</span></h5>
+                    <a href="mailto:toni.majkic@gmail.com"><img class="contact__mediaIcon" src="./assets/img/mail_icon.svg" alt="mail-icon"></a>
+                </div>
+                <div class="contact__contentSocialMedia">
+                    <h5 class="contact__contentSocialMediaHeading">Social Media<span class="heading_underscore">_</span></h5>
+                    <div>
+                       <a href="https://www.linkedin.com/in/toni-sabljić-b5298911b/" target="_blank"><img class="contact__mediaIcon linkedin-icon" src="assets/img/Linkedin-img.png" alt="Linkedin-icon"></a>
+                       <a href="https://github.com/T-sabljic" target="_blank"><img class="contact__mediaIcon" src="assets/img/github-icon.jpg" alt="github-icon"></a>
+                       <a href="https://www.instagram.com/toni_sabljic/" target="_blank"><img class="contact__mediaIcon" src="assets/img/instagram-icon.webp" alt="instagram-icon"></a>
+                       <a href=""><img class="contact__mediaIcon" src="assets/img/Vector-1.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form action="contact.php" method="POST" class="contact__form">
+            <h3 class="contact__formHeading">Drop me a message</h3>
+              <label for="name">Name</label>
+              <input type="text" name="name">
+              <label for="email">Email</label>
+              <input type="email" name="email">
+              <label for="message">Message</label>
+              <textarea name="message" rows="6" required></textarea>
+              <button type="submit" class="contact__btn btn">Send</button>
+        </form>
+
+       </div>
+    </section>
+      
+
+    <!----- FOOTER SECTION --------->
+    
+    <footer class="footer">
+        <p>&copy; 2025 Ts_code. All rights reserved.</p>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

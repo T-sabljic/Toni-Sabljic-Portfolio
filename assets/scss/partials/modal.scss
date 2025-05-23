@@ -1,0 +1,92 @@
+
+
+@use "variables" as *;
+
+.modal{
+  width: 30rem;
+  background-color: $whiteColor;
+  padding: 2rem 0;
+  border-radius: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+
+  .modal__form{
+    display: flex;
+    padding: 2rem 2rem;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+
+    input{
+      padding: 0.7rem 0.2rem;
+      font-size: 1.1rem;
+      letter-spacing: 1.5px;
+    }
+
+    textarea:placeholder-shown{
+      font-size: 1.1rem;
+      padding: 0.7rem 0.3rem;
+      letter-spacing: 1.5px;
+    }
+
+    textarea:not(placeholder-shown){
+      font-size: 1.1rem;
+      padding: 0.7rem 0.3rem;
+      letter-spacing: 1.5px;
+    }
+
+    .modal__formBtn{
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      padding: 0.8rem 5rem;
+    }
+
+    label{
+      color: $blackColor;
+      font-size: 1.3rem;
+      font-weight: 200;
+      letter-spacing: 2px;
+    }
+  }
+
+  .modal__icons{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    
+    a{
+
+     .modal__whatsappIcon{
+        width: 3rem;
+        border-radius: 0.7rem;
+      }
+
+      .modal__phoneIcon{
+        width: 3rem;
+        border-radius: 0.7rem;
+      }
+    }
+  }
+
+  .modal__closeBtn{
+    float: right;
+    margin-right: 2rem;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+  }
+}
