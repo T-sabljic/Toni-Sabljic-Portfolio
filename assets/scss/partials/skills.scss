@@ -11,6 +11,19 @@
     align-items:center;
     gap: 3rem;
 
+    @media(max-width:1100px){
+        padding: 6rem 0rem;
+     }
+
+     @media(max-width:768px){
+        gap: 2rem;
+        margin-top: 0rem;
+     }
+
+     @media(max-width:576px){
+        gap: 1.5rem;
+     }
+
     .skills__headingH3{
         margin-left: 6rem;
         color: $whiteColor;
@@ -20,18 +33,38 @@
     .skills__lang{
             height: 2rem;
             display: flex;
-            
 
         .skills__heading{
             width: 12rem;
-            text-align: center;
+            text-align: left;
             color: $whiteColor;
             font-weight: 300;
             letter-spacing: 2px;
+            font-size: 1.3rem;
+
+            @media(max-width:768px){
+                font-size: 1.1rem;
+             }
+
+             @media(max-width:576px){
+                text-align: center;
+             }
         }
         .skills__parentPrcent{
             width: 800px;
             border: 2px solid $whiteColor;
+
+            @media(max-width:992px){
+                width: 500px;
+             }
+
+             @media(max-width:768px){
+                width: 400px;
+             }
+
+             @media(max-width:576px){
+                width: 300px;
+             }
 
             .skills__prcent{
                 height: 100%;
@@ -43,6 +76,14 @@
                     font-size: 1.3rem;
                     letter-spacing: 2px;
                     font-weight: 600;
+
+                    @media(max-width:768px){
+                        font-size: 1.1rem;
+                     }
+
+                     @media(max-width:576px){
+                        font-size: 0.9rem;
+                     }
                 }
                 
             }
@@ -50,6 +91,15 @@
             .skill__langProgres{
                 color: $whiteColor;
                 font-size: 1.1rem;
+                letter-spacing: 1px;
+
+                @media(max-width:768px){
+                    font-size: 1rem;
+                 }
+
+                @media(max-width:576px){
+                    font-size: 0.9rem;
+                 }
             }
         }
     }

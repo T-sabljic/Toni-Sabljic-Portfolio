@@ -87,51 +87,74 @@ fetchWeather(weatherApi);
 
   // SKILLS PRCENT
 
-  let skillsSection = document.querySelector(".skills");
+let skillsSection = document.querySelector(".skills");
+let skillsPrcents = document.querySelectorAll(".skills__prcent");
 
-  let skillsPrcents = document.querySelectorAll(".skills__prcent");
-
-  let skillsParentPrcent = document.querySelector(".skills__parentPrcent");
-  
-
-  for(const skillPrcent of skillsPrcents) {
-
-    let intervalStarted = false;
-
-    const observer = new IntersectionObserver((entries, observer) => {
-
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !intervalStarted) {
-          intervalStarted = true;
-    
-          let currentWidth = 0;
-          const maxWidth = 800 * parseFloat(skillPrcent.dataset.max);
-    
-          const interval = setInterval(() => {
-            if (currentWidth >= maxWidth) {
-              clearInterval(interval);
-              skillPrcent.appendChild(percentText);
-
-            } else {
-              currentWidth += 4;
-              skillPrcent.style.width = currentWidth + "px";
-            }
-          }, 25);
-    
-          let skillsNumber = parseFloat(skillPrcent.dataset.max) * 100;
-          const percentText = document.createElement("p");
-          percentText.innerText = `${Math.round(skillsNumber)}%`;
-          
-          observer.unobserve(skillsSection); // Remove the observer after it has been triggered
-        }
-      });
-    }, {
-      threshold: 0.2 // Trigger when 50% of the section is visible
-    });
-    
-    observer.observe(skillsSection);
-    
+// Funkcija koja vraća baznu širinu ovisno o širini prozora
+function getBaseWidth() {
+  if (window.innerWidth <= 576) {
+    return 300;
+  } else if (window.innerWidth <= 768) {
+    return 400;
+  } else if (window.innerWidth <= 992) {
+    return 500;
+  } else {
+    return 800;
   }
+}
+
+for (const skillPrcent of skillsPrcents) {
+  let intervalStarted = false;
+  let interval;
+  let percentText;
+
+  // Funkcija koja pokreće animaciju širine
+  function startAnimation() {
+    clearInterval(interval); // zaustavi staru animaciju ako postoji
+    skillPrcent.style.width = "0px"; // reset širine
+    if (percentText) percentText.remove(); // ukloni stari tekst ako postoji
+
+    let currentWidth = 0;
+    let baseWidth = getBaseWidth();
+    let maxWidth = baseWidth * parseFloat(skillPrcent.dataset.max);
+
+    let skillsNumber = parseFloat(skillPrcent.dataset.max) * 100;
+    percentText = document.createElement("p");
+    percentText.innerText = `${Math.round(skillsNumber)}%`;
+
+    interval = setInterval(() => {
+      if (currentWidth >= maxWidth) {
+        clearInterval(interval);
+        skillPrcent.appendChild(percentText);
+      } else {
+        currentWidth += 4;
+        skillPrcent.style.width = currentWidth + "px";
+      }
+    }, 25);
+  }
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !intervalStarted) {
+        intervalStarted = true;
+        startAnimation(); // pokreni animaciju kad element uđe u viewport
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  observer.observe(skillsSection);
+
+  // Ponovno pokretanje animacije prilikom resize-a ako je već startana
+  window.addEventListener("resize", () => {
+    if (intervalStarted) {
+      startAnimation();
+    }
+  });
+}
+
+
 
 
   // NAV SECTION CHANGE OPACITY
@@ -142,7 +165,7 @@ fetchWeather(weatherApi);
   window.addEventListener("scroll", () => {
     let rectNav = nav.getBoundingClientRect().bottom;
 
-    if(rectNav <= -650) {
+    if(rectNav <= -200) {
       navContent.style.background = "rgba(0,0,0,1)";
       navContent.style.backgroundColor = "#111723";
       navContent.classList.add("nav-underline");
@@ -163,7 +186,7 @@ fetchWeather(weatherApi);
       listItem.style.border = "1px solid white";
     }
 
-    if(nav.getBoundingClientRect().bottom <= -650) {
+    if(nav.getBoundingClientRect().bottom <= -200) {
       navContent.style.background = "rgba(17, 23, 35, 1)";
     } else{
       navContent.style.background = "rgba(0, 0, 0, 0.7)";
@@ -177,7 +200,7 @@ fetchWeather(weatherApi);
       listItem.style.border = "1px solid black";
     }
 
-    if(nav.getBoundingClientRect().bottom <= -650) {
+    if(nav.getBoundingClientRect().bottom <= -200) {
       navContent.style.background = "rgba(17, 23, 35, 1)";
     } else{
       navContent.style.background = "rgba(0, 0 ,0, 0.5)";
@@ -277,4 +300,18 @@ fetchWeather(weatherApi);
     event.preventDefault();
     return;
   }
+});
+
+
+//  SHOW MOBILE MENU 
+
+const hamburgerIcon = document.querySelector(".nav__hamburger");
+const navList = document.querySelector(".nav__list");
+
+hamburgerIcon.addEventListener("click", () => {
+    navList.classList.toggle("activeHamburger");
+});
+
+navList.addEventListener("click", ()=> {
+  navList.classList.remove("activeHamburger");
 });

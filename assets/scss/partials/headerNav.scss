@@ -11,24 +11,40 @@ header{
    width: 100%;
    height: 100vh;        
               
+   @media(max-width:768px){
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/ts_bckgImg.png") no-repeat right center / cover;
+      height: 90vh;  
+   }
+
+   @media(max-width:576px){
+      height: 80vh;
+   }
               
          .header__content{
             position: absolute;
             top: 15rem;
             left: 10rem;
 
+            @media(max-width:576px){
+               left: 5rem;
+            }
+
             .header__contentInfo{
                width: 7rem;
+
+               @media(max-width:768px){
+                  width: 5rem;
+               }
 
                .toni_img{
                   width: 100%;
                   height: auto;
-                  border-top: 2px solid $primaryColor;
-                  border-right: 2px solid $primaryColor;
-                  border-bottom: 2px solid $secondaryColor;
-                  border-left: 2px solid $secondaryColor;
                   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
-                  
+                  border-radius: 0.3rem;
+
+                  @media(max-width:768px){
+                     box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.9);
+                  }
                }
             }
             .header__contentText{
@@ -40,6 +56,23 @@ header{
                   letter-spacing: 2px;
                   height: 9rem;
                   color: $whiteColor;
+
+                  @media(max-width:576px){
+                     font-size: 1.2rem;
+                  }
+               }
+
+               .header__contentBtn{
+
+                  @media(max-width:768px){
+                     padding: 0.7rem 4rem;
+                     font-size: 1.2rem;
+                     margin-top: 2rem;
+                  }
+
+                  @media(max-width:576px){
+                     margin-top: 0rem;
+                  }
                }
             }
             }
@@ -59,6 +92,21 @@ header{
                z-index: 1000;
                transition: 0.8s ease;
                background:rgba(0,0,0,0.5);
+               transform-style: preserve-3d;
+               perspective: 1000px;
+
+               @media(max-width:1400px){
+                  justify-content:space-around;
+                 }
+
+                 @media(max-width:768px){
+                  padding: 0.5rem 0px;
+               }
+
+               @media(max-width:576px){
+                  justify-content: space-between;
+                  perspective: 1000px;
+               }
 
                &.nav-underline {
                   border-bottom: 2px solid $whiteColor; 
@@ -66,6 +114,28 @@ header{
                
                .nav__logo{
                   margin-left: 3rem;
+
+                  @media(max-width:1400px){
+                     margin-left: 0rem;
+                    }
+
+                  a{
+
+                     .nav__logoImg{
+
+                        @media(max-width:992px){
+                           width: 4.5rem;
+                        }
+
+                        @media(max-width:768px){
+                           width: 3.5rem;
+                        }
+
+                        @media(max-width:576px){
+                           margin-left: 2rem;
+                        }
+                     }
+                  }
                }
          
                .nav__list{
@@ -73,14 +143,60 @@ header{
                   display: flex;
                   justify-content: center;
                   align-items: center;
-                  gap: 100px;
+                  gap: 6.3rem;
                   width: auto;
-                  margin-left: 7rem; // set the nav_links and weather more right
+                  margin-left: 8rem; // set the nav_links and weather more right
+                    
+                  @media(max-width:1200px){
+                     gap: 5rem;
+                     margin-left: 0;
+                    }
+
+                    @media(max-width:992px){
+                     gap: 2rem;
+                    }
+
+                    @media(max-width:768px){
+                     gap: 1rem;
+                    }
+
+                    @media (max-width: 576px) {
+                       position: fixed;
+                       top: 4.5rem;
+                       left: 0;
+                       height: 80vh;
+                       width: 100%;
+                       flex-direction: column;
+                       justify-content: flex-start;
+                       align-items: center;
+                       gap: 2rem;
+                       transform: rotateY(180deg);
+                       transform-origin: left;
+                       backface-visibility: hidden;
+                       transition: transform 0.7s ease;
+                       background:rgba(0,0,0,0.9);
+                       padding-top: 2rem;
+                   
+                     &.activeHamburger {
+                       transform: rotateY(0deg);
+                     }
+                   }
 
                      .nav__listItems{
                      border: 1px solid $blackColor;
                      padding: 5px 25px;
                      transition: 1s ease;
+                     width: 9rem;
+                     text-align: center;
+
+                     @media(max-width:992px){
+                        padding: 5px 20px;
+                        width: 7rem;
+                       }
+
+                       @media(max-width:768px){
+                        padding: 3px 10px;
+                       }
          
                      .nav__listLinks{
                         color: $whiteColor;
@@ -89,6 +205,18 @@ header{
                         font-weight: 500;
                         letter-spacing: 2px;
                         transition: 0.4s ease;
+
+                        @media(max-width:992px){
+                           font-size:1rem;
+                          }
+
+                          @media(max-width:768px){
+                           font-size:0.8rem;
+                          }
+
+                          @media(max-width:576px){
+                           font-size:1rem;
+                          }
                      }
 
                      .nav__listLinks:hover{
@@ -101,6 +229,10 @@ header{
                   display: flex;
                   flex-direction: column;
                   align-items: center;
+
+                  @media(max-width:1400px){
+                     display: none;
+                    }
 
                   .nav__weatherInfo{
                      display: flex;
@@ -124,6 +256,36 @@ header{
                      }
                   }
                }
+
+               .nav__hamburger{
+                  width: 40px;
+                  height: 40px;
+                  border: 1px solid $whiteColor;
+                  border-radius: 5px;
+                  padding: 10px;
+                  display: none;
+                  cursor: pointer;
+      
+                  @media(max-width:576px){
+                      display: block;
+                  }
+                  
+                  .nav__hamburger__top,
+                  .nav__hamburger__center,
+                  .nav__hamburger__bottom {
+                      background-color: $whiteColor;
+                      height: 2px;
+                      width: 100%;
+                      margin-top: 7px;
+                  }
+                  .nav__hamburger__top{
+                      margin-top: 0px;
+                  }
+
+                  @media(max-width:576px){
+                     margin-right: 2rem;
+                  }
+              }
             }
          }
 }

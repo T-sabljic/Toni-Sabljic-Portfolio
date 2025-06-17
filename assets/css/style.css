@@ -75,6 +75,11 @@ img {
   margin-right: 3rem;
   position: relative;
 }
+@media (max-width: 1400px) {
+  .nav__clock {
+    display: none;
+  }
+}
 .nav__clock .nav__clockPoint {
   width: 0.4rem;
   height: 0.4rem;
@@ -169,22 +174,45 @@ header {
   width: 100%;
   height: 100vh;
 }
+@media (max-width: 768px) {
+  header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/ts_bckgImg.png") no-repeat right center/cover;
+    height: 90vh;
+  }
+}
+@media (max-width: 576px) {
+  header {
+    height: 80vh;
+  }
+}
 header .header__content {
   position: absolute;
   top: 15rem;
   left: 10rem;
 }
+@media (max-width: 576px) {
+  header .header__content {
+    left: 5rem;
+  }
+}
 header .header__content .header__contentInfo {
   width: 7rem;
+}
+@media (max-width: 768px) {
+  header .header__content .header__contentInfo {
+    width: 5rem;
+  }
 }
 header .header__content .header__contentInfo .toni_img {
   width: 100%;
   height: auto;
-  border-top: 2px solid #d1be47;
-  border-right: 2px solid #d1be47;
-  border-bottom: 2px solid #111723;
-  border-left: 2px solid #111723;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 0.3rem;
+}
+@media (max-width: 768px) {
+  header .header__content .header__contentInfo .toni_img {
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.9);
+  }
 }
 header .header__content .header__contentText {
   margin-top: 2.5rem;
@@ -195,6 +223,23 @@ header .header__content .header__contentText .header__contentTextAbout {
   letter-spacing: 2px;
   height: 9rem;
   color: white;
+}
+@media (max-width: 576px) {
+  header .header__content .header__contentText .header__contentTextAbout {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  header .header__content .header__contentText .header__contentBtn {
+    padding: 0.7rem 4rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 576px) {
+  header .header__content .header__contentText .header__contentBtn {
+    margin-top: 0rem;
+  }
 }
 header .nav {
   display: flex;
@@ -211,6 +256,24 @@ header .nav .nav__content {
   z-index: 1000;
   transition: 0.8s ease;
   background: rgba(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+@media (max-width: 1400px) {
+  header .nav .nav__content {
+    justify-content: space-around;
+  }
+}
+@media (max-width: 768px) {
+  header .nav .nav__content {
+    padding: 0.5rem 0px;
+  }
+}
+@media (max-width: 576px) {
+  header .nav .nav__content {
+    justify-content: space-between;
+    perspective: 1000px;
+  }
 }
 header .nav .nav__content.nav-underline {
   border-bottom: 2px solid white;
@@ -218,19 +281,90 @@ header .nav .nav__content.nav-underline {
 header .nav .nav__content .nav__logo {
   margin-left: 3rem;
 }
+@media (max-width: 1400px) {
+  header .nav .nav__content .nav__logo {
+    margin-left: 0rem;
+  }
+}
+@media (max-width: 992px) {
+  header .nav .nav__content .nav__logo a .nav__logoImg {
+    width: 4.5rem;
+  }
+}
+@media (max-width: 768px) {
+  header .nav .nav__content .nav__logo a .nav__logoImg {
+    width: 3.5rem;
+  }
+}
+@media (max-width: 576px) {
+  header .nav .nav__content .nav__logo a .nav__logoImg {
+    margin-left: 2rem;
+  }
+}
 header .nav .nav__content .nav__list {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 6.3rem;
   width: auto;
-  margin-left: 7rem;
+  margin-left: 8rem;
+}
+@media (max-width: 1200px) {
+  header .nav .nav__content .nav__list {
+    gap: 5rem;
+    margin-left: 0;
+  }
+}
+@media (max-width: 992px) {
+  header .nav .nav__content .nav__list {
+    gap: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  header .nav .nav__content .nav__list {
+    gap: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  header .nav .nav__content .nav__list {
+    position: fixed;
+    top: 4.5rem;
+    left: 0;
+    height: 80vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    transform: rotateY(180deg);
+    transform-origin: left;
+    backface-visibility: hidden;
+    transition: transform 0.7s ease;
+    background: rgba(0, 0, 0, 0.9);
+    padding-top: 2rem;
+  }
+  header .nav .nav__content .nav__list.activeHamburger {
+    transform: rotateY(0deg);
+  }
 }
 header .nav .nav__content .nav__list .nav__listItems {
   border: 1px solid black;
   padding: 5px 25px;
   transition: 1s ease;
+  width: 9rem;
+  text-align: center;
+}
+@media (max-width: 992px) {
+  header .nav .nav__content .nav__list .nav__listItems {
+    padding: 5px 20px;
+    width: 7rem;
+  }
+}
+@media (max-width: 768px) {
+  header .nav .nav__content .nav__list .nav__listItems {
+    padding: 3px 10px;
+  }
 }
 header .nav .nav__content .nav__list .nav__listItems .nav__listLinks {
   color: white;
@@ -240,6 +374,21 @@ header .nav .nav__content .nav__list .nav__listItems .nav__listLinks {
   letter-spacing: 2px;
   transition: 0.4s ease;
 }
+@media (max-width: 992px) {
+  header .nav .nav__content .nav__list .nav__listItems .nav__listLinks {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  header .nav .nav__content .nav__list .nav__listItems .nav__listLinks {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 576px) {
+  header .nav .nav__content .nav__list .nav__listItems .nav__listLinks {
+    font-size: 1rem;
+  }
+}
 header .nav .nav__content .nav__list .nav__listItems .nav__listLinks:hover {
   color: #d1be47;
 }
@@ -247,6 +396,11 @@ header .nav .nav__content .nav__weather {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 1400px) {
+  header .nav .nav__content .nav__weather {
+    display: none;
+  }
 }
 header .nav .nav__content .nav__weather .nav__weatherInfo {
   display: flex;
@@ -268,6 +422,36 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__temp {
 header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   padding-top: 5px;
 }
+header .nav .nav__content .nav__hamburger {
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+  cursor: pointer;
+}
+@media (max-width: 576px) {
+  header .nav .nav__content .nav__hamburger {
+    display: block;
+  }
+}
+header .nav .nav__content .nav__hamburger .nav__hamburger__top,
+header .nav .nav__content .nav__hamburger .nav__hamburger__center,
+header .nav .nav__content .nav__hamburger .nav__hamburger__bottom {
+  background-color: white;
+  height: 2px;
+  width: 100%;
+  margin-top: 7px;
+}
+header .nav .nav__content .nav__hamburger .nav__hamburger__top {
+  margin-top: 0px;
+}
+@media (max-width: 576px) {
+  header .nav .nav__content .nav__hamburger {
+    margin-right: 2rem;
+  }
+}
 
 .about {
   display: flex;
@@ -275,11 +459,45 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   margin-top: 5rem;
   height: 100vh;
 }
+@media (max-width: 992px) {
+  .about {
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 0rem;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .about {
+    justify-content: center;
+    gap: 5rem;
+  }
+}
 .about .about__content {
   width: 45%;
 }
+@media (max-width: 1200px) {
+  .about .about__content {
+    width: 50%;
+  }
+}
+@media (max-width: 992px) {
+  .about .about__content {
+    width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  .about .about__content {
+    width: 100%;
+  }
+}
 .about .about__content .about__heading {
   margin: 0 0 2rem 2rem;
+}
+@media (max-width: 1200px) {
+  .about .about__content .about__heading {
+    margin: 0 0 1rem 1rem;
+  }
 }
 .about .about__content .about__headingText {
   font-family: "Poppins", sans-serif;
@@ -287,36 +505,104 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   font-size: 1.5rem;
   font-style: italic;
 }
+@media (max-width: 992px) {
+  .about .about__content .about__headingText {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 576px) {
+  .about .about__content .about__headingText {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+}
 .about .about__content .about__text {
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.5rem;
   font-style: italic;
 }
+@media (max-width: 1200px) {
+  .about .about__content .about__text {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 576px) {
+  .about .about__content .about__text {
+    font-size: 1.1rem;
+  }
+}
 .about .about__projects {
   width: 40%;
 }
+@media (max-width: 992px) {
+  .about .about__projects {
+    width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  .about .about__projects {
+    width: 100%;
+  }
+}
 .about .about__projects .about__projectsHeading {
   margin: 0 0 4rem 2rem;
+}
+@media (max-width: 992px) {
+  .about .about__projects .about__projectsHeading {
+    margin: 0 0 3rem 2rem;
+  }
 }
 .about .about__projects .about__projectsMedia {
   display: flex;
   flex-direction: column;
 }
+@media (max-width: 992px) {
+  .about .about__projects .about__projectsMedia {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
 .about .about__projects .about__projectsMedia .about__projectsImg1 {
   width: 100%;
   border-top: 2px solid #d1be47;
   border-right: 2px solid #d1be47;
+  padding-top: 0.3rem;
+}
+@media (max-width: 992px) {
+  .about .about__projects .about__projectsMedia .about__projectsImg1 {
+    border-left: 2px solid #d1be47;
+    border-bottom: 2px solid #d1be47;
+    border-top: none;
+    border-right: none;
+    padding-left: 0.3rem;
+  }
 }
 .about .about__projects .about__projectsMedia .about__projectsImg2 {
   width: 100%;
   border-left: 2px solid #d1be47;
   border-bottom: 2px solid #d1be47;
+  padding-left: 0.3rem;
+}
+@media (max-width: 992px) {
+  .about .about__projects .about__projectsMedia .about__projectsImg2 {
+    border-left: none;
+    border-bottom: none;
+    border-top: 2px solid #d1be47;
+    border-right: 2px solid #d1be47;
+    padding-top: 0.3rem;
+  }
 }
 .about .about__projects .about__projectsMedia .line {
   width: 70%;
   height: 3px;
   background-color: #d1be47;
   margin: 2rem 0;
+}
+@media (max-width: 992px) {
+  .about .about__projects .about__projectsMedia .line {
+    display: none;
+  }
 }
 
 .skills {
@@ -327,6 +613,22 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+}
+@media (max-width: 1100px) {
+  .skills {
+    padding: 6rem 0rem;
+  }
+}
+@media (max-width: 768px) {
+  .skills {
+    gap: 2rem;
+    margin-top: 0rem;
+  }
+}
+@media (max-width: 576px) {
+  .skills {
+    gap: 1.5rem;
+  }
 }
 .skills .skills__headingH3 {
   margin-left: 6rem;
@@ -339,14 +641,40 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
 }
 .skills .skills__lang .skills__heading {
   width: 12rem;
-  text-align: center;
+  text-align: left;
   color: white;
   font-weight: 300;
   letter-spacing: 2px;
+  font-size: 1.3rem;
+}
+@media (max-width: 768px) {
+  .skills .skills__lang .skills__heading {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 576px) {
+  .skills .skills__lang .skills__heading {
+    text-align: center;
+  }
 }
 .skills .skills__lang .skills__parentPrcent {
   width: 800px;
   border: 2px solid white;
+}
+@media (max-width: 992px) {
+  .skills .skills__lang .skills__parentPrcent {
+    width: 500px;
+  }
+}
+@media (max-width: 768px) {
+  .skills .skills__lang .skills__parentPrcent {
+    width: 400px;
+  }
+}
+@media (max-width: 576px) {
+  .skills .skills__lang .skills__parentPrcent {
+    width: 300px;
+  }
 }
 .skills .skills__lang .skills__parentPrcent .skills__prcent {
   height: 100%;
@@ -359,9 +687,30 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   letter-spacing: 2px;
   font-weight: 600;
 }
+@media (max-width: 768px) {
+  .skills .skills__lang .skills__parentPrcent .skills__prcent p {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 576px) {
+  .skills .skills__lang .skills__parentPrcent .skills__prcent p {
+    font-size: 0.9rem;
+  }
+}
 .skills .skills__lang .skills__parentPrcent .skill__langProgres {
   color: white;
   font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+@media (max-width: 768px) {
+  .skills .skills__lang .skills__parentPrcent .skill__langProgres {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  .skills .skills__lang .skills__parentPrcent .skill__langProgres {
+    font-size: 0.9rem;
+  }
 }
 
 .backgroundContactSection {
@@ -373,6 +722,12 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   grid-template-rows: auto auto;
   column-gap: 1rem;
 }
+@media (max-width: 992px) {
+  .backgroundContactSection .contact {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+}
 .backgroundContactSection .contact .contact__Heading {
   font-size: 2.8rem;
   color: white;
@@ -382,14 +737,41 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   grid-column: 1/3;
   margin-top: 5rem;
 }
+@media (max-width: 992px) {
+  .backgroundContactSection .contact .contact__Heading {
+    grid-row: 1/2;
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 576px) {
+  .backgroundContactSection .contact .contact__Heading {
+    font-size: 2.3rem;
+    margin-top: 4rem;
+  }
+}
 .backgroundContactSection .contact .contact__content {
   padding: 5rem 0;
+}
+@media (max-width: 992px) {
+  .backgroundContactSection .contact .contact__content {
+    grid-row: 2/3;
+  }
+}
+@media (max-width: 576px) {
+  .backgroundContactSection .contact .contact__content {
+    padding: 4rem 0 3rem 0;
+  }
 }
 .backgroundContactSection .contact .contact__content .contact__media {
   display: flex;
   justify-content: start;
   align-items: flex-start;
   gap: 7rem;
+}
+@media (max-width: 1200px) {
+  .backgroundContactSection .contact .contact__content .contact__media {
+    gap: 3rem;
+  }
 }
 .backgroundContactSection .contact .contact__content .contact__media .contact__contentEmail .contact__contentEmailHeading {
   font-size: 1.3rem;
@@ -401,6 +783,11 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
 .backgroundContactSection .contact .contact__content .contact__media .contact__contentEmail .contact__mediaIcon {
   width: 3rem;
 }
+@media (max-width: 1200px) {
+  .backgroundContactSection .contact .contact__content .contact__media .contact__contentEmail .contact__mediaIcon {
+    width: 2.5rem;
+  }
+}
 .backgroundContactSection .contact .contact__content .contact__media .contact__contentSocialMedia {
   display: flex;
   flex-direction: column;
@@ -409,6 +796,11 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   width: 3rem;
   margin-right: 1rem;
   border-radius: 1rem;
+}
+@media (max-width: 1200px) {
+  .backgroundContactSection .contact .contact__content .contact__media .contact__contentSocialMedia .contact__mediaIcon {
+    width: 2.5rem;
+  }
 }
 .backgroundContactSection .contact .contact__content .contact__media .contact__contentSocialMedia .contact__contentSocialMediaHeading {
   font-size: 1.3rem;
@@ -424,12 +816,22 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   letter-spacing: 2px;
   margin-bottom: 2rem;
 }
+@media (max-width: 576px) {
+  .backgroundContactSection .contact .contact__content .contact__contentSubheading {
+    font-size: 2rem;
+  }
+}
 .backgroundContactSection .contact .contact__form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 2rem 0;
   gap: 0.8rem;
+}
+@media (max-width: 992px) {
+  .backgroundContactSection .contact .contact__form {
+    grid-row: 3/4;
+  }
 }
 .backgroundContactSection .contact .contact__form .contact__formHeading {
   color: #d1be47;
@@ -443,7 +845,16 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   border: none;
   outline: none;
   transition: font-size 0.2s ease;
-  height: 3rem;
+}
+@media (max-width: 992px) {
+  .backgroundContactSection .contact .contact__form input {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  .backgroundContactSection .contact .contact__form input {
+    padding: 0.7rem 0.5rem;
+  }
 }
 .backgroundContactSection .contact .contact__form input:not(:placeholder-shown) {
   font-size: 1.2rem;
@@ -461,6 +872,11 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   outline: none;
   margin-bottom: 2rem;
 }
+@media (max-width: 992px) {
+  .backgroundContactSection .contact .contact__form textarea {
+    width: 80%;
+  }
+}
 .backgroundContactSection .contact .contact__form textarea:not(:placeholder-shown) {
   font-size: 1.2rem;
 }
@@ -468,6 +884,12 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   margin-top: 0;
   width: 50%;
   box-shadow: none;
+}
+@media (max-width: 992px) {
+  .backgroundContactSection .contact .contact__form .contact__btn {
+    padding: 0.8rem 4rem;
+    width: 40%;
+  }
 }
 .backgroundContactSection .contact .contact__form .contact__btn::before {
   background: linear-gradient(to right, #d1be47 0%, black 40%, black 60%, #d1be47 100%);
@@ -492,6 +914,18 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   transform: translateY(-20px);
   transition: all 0.4s ease;
   pointer-events: none;
+  z-index: 2;
+}
+@media (max-width: 768px) {
+  .modal {
+    width: 25rem;
+    padding: 1.5rem 0;
+  }
+}
+@media (max-width: 576px) {
+  .modal {
+    width: 22rem;
+  }
 }
 .modal.active {
   opacity: 1;
@@ -510,20 +944,48 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   gap: 0.6rem;
   width: 100%;
 }
+@media (max-width: 576px) {
+  .modal .modal__form {
+    padding: 1.5rem 1.5rem;
+  }
+}
 .modal .modal__form input {
   padding: 0.7rem 0.2rem;
   font-size: 1.1rem;
   letter-spacing: 1.5px;
+}
+@media (max-width: 576px) {
+  .modal .modal__form input {
+    padding: 0.5rem 0.2rem;
+    font-size: 0.9;
+  }
+}
+@media (max-width: 576px) {
+  .modal .modal__form textarea {
+    height: 5rem;
+  }
 }
 .modal .modal__form textarea:placeholder-shown {
   font-size: 1.1rem;
   padding: 0.7rem 0.3rem;
   letter-spacing: 1.5px;
 }
+@media (max-width: 576px) {
+  .modal .modal__form textarea:placeholder-shown {
+    padding: 0.5rem 0.2rem;
+    font-size: 0.9;
+  }
+}
 .modal .modal__form textarea:not(placeholder-shown) {
   font-size: 1.1rem;
   padding: 0.7rem 0.3rem;
   letter-spacing: 1.5px;
+}
+@media (max-width: 576px) {
+  .modal .modal__form textarea:not(placeholder-shown) {
+    padding: 0.5rem 0.2rem;
+    font-size: 0.9;
+  }
 }
 .modal .modal__form .modal__formBtn {
   margin-top: 1rem;
@@ -536,6 +998,11 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   font-weight: 200;
   letter-spacing: 2px;
 }
+@media (max-width: 576px) {
+  .modal .modal__form label {
+    font-size: 1rem;
+  }
+}
 .modal .modal__icons {
   display: flex;
   justify-content: center;
@@ -545,15 +1012,55 @@ header .nav .nav__content .nav__weather .nav__weatherInfo .nav__celsius {
   width: 3rem;
   border-radius: 0.7rem;
 }
+@media (max-width: 576px) {
+  .modal .modal__icons a .modal__whatsappIcon {
+    width: 2rem;
+  }
+}
 .modal .modal__icons a .modal__phoneIcon {
   width: 3rem;
   border-radius: 0.7rem;
+}
+@media (max-width: 576px) {
+  .modal .modal__icons a .modal__phoneIcon {
+    width: 2rem;
+  }
 }
 .modal .modal__closeBtn {
   float: right;
   margin-right: 2rem;
   padding: 0.3rem 0.7rem;
   cursor: pointer;
+}
+@media (max-width: 576px) {
+  .modal .modal__closeBtn {
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+.nav__mobileMenu.hidden {
+  display: none;
+}
+.nav__mobileMenu .nav__mobileMenu__list .nav__mobileMenu__item {
+  padding-bottom: 10px;
+}
+.nav__mobileMenu .nav__mobileMenu__list .nav__mobileMenu__item.nav__item__dropdown i {
+  color: white;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.nav__mobileMenu .nav__mobileMenu__list .nav__mobileMenu__item.nav__item__dropdown:hover i {
+  color: #111723;
+}
+.nav__mobileMenu .nav__mobileMenu__list .nav__mobileMenu__item.nav__item__dropdown .nav__mobileMenu__dropdown {
+  display: none;
+}
+.nav__mobileMenu .nav__mobileMenu__list .nav__mobileMenu__item .nav__mobileMenu__links {
+  color: white;
+  font-weight: 500;
+}
+.nav__mobileMenu .nav__mobileMenu__list .nav__mobileMenu__item .nav__mobileMenu__links:hover {
+  color: #111723;
 }
 
 /*# sourceMappingURL=style.css.map */

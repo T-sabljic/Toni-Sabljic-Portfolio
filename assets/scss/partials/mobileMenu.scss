@@ -1,0 +1,38 @@
+
+@use "variables" as *;
+
+.nav__mobileMenu{
+        
+    &.hidden{
+        display: none;
+    }
+    .nav__mobileMenu__list{
+        .nav__mobileMenu__item{
+            padding-bottom: 10px;
+
+            &.nav__item__dropdown{
+               
+                i{
+                    color: $whiteColor;
+                    margin-left: 5px;
+                    cursor: pointer;
+                }
+
+                &:hover i{
+                    color: $secondaryColor;
+                }
+                .nav__mobileMenu__dropdown{
+                    display: none;
+                }
+            }
+            .nav__mobileMenu__links{
+                color: $whiteColor;
+                font-weight: 500;
+                
+                &:hover{
+                    color: $secondaryColor;
+                }
+            }
+        }
+    }
+}

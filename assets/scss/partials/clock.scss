@@ -9,6 +9,10 @@
     margin-right: 3rem;
     position: relative;
 
+    @media(max-width:1400px){
+      display: none;
+     }
+
     .nav__clockPoint{
        width: 0.4rem;
        height: 0.4rem;
