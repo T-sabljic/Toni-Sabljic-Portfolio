@@ -24,7 +24,7 @@
         gap: 1.5rem;
      }
 
-    .skills__headingH3{
+    .skills__headingH2{
         margin-left: 6rem;
         color: $whiteColor;
         letter-spacing: 3px;
@@ -48,6 +48,8 @@
 
              @media(max-width:576px){
                 text-align: center;
+                width: 10rem;
+                font-size: 1rem;
              }
         }
         .skills__parentPrcent{
@@ -63,7 +65,7 @@
              }
 
              @media(max-width:576px){
-                width: 300px;
+                width: 200px;
              }
 
             .skills__prcent{

@@ -33,7 +33,12 @@
           font-size: 2.3rem;
           margin-top: 4rem;
         }
+
+        @media (max-width:375px) {
+          font-size: 1.7rem;
         }
+
+      }
 
       .contact__content{
         padding: 5rem 0;
@@ -64,12 +69,24 @@
               font-weight: 400;
               letter-spacing: 2px;
               margin-bottom: 1rem;
+
+              @media (max-width:375px) {
+                font-size: 1.1rem;
+              }
             }
             .contact__mediaIcon{
               width: 3rem;
 
               @media(max-width:1200px){
                 width: 2.5rem;
+             }
+
+             @media (max-width:576px) {
+              width: 1.9rem;
+             }
+
+             @media (max-width:375px) {
+              width: 1.7rem;
              }
            }
             
@@ -87,6 +104,15 @@
               @media(max-width:1200px){
                 width: 2.5rem;
              }
+
+             @media (max-width:576px) {
+              width: 1.9rem;
+             }
+
+              @media (max-width:375px) {
+              width: 1.7rem;
+              margin-right: 0.5rem;
+             }
            }
 
            .contact__contentSocialMediaHeading{
@@ -95,6 +121,10 @@
               font-weight: 400;
               letter-spacing: 2px;
               margin-bottom: 1rem;
+
+              @media (max-width:375px) {
+                font-size: 1.1rem;
+              }
            }
           }
         }
@@ -108,6 +138,10 @@
 
           @media (max-width:576px) {
             font-size: 2rem;
+           }
+
+           @media (max-width:375px) {
+            font-size: 1.5rem;
            }
         }
     }
@@ -128,6 +162,10 @@
         font-size: 1.7rem;
         letter-spacing: 2px;
         font-weight: 400;
+
+        @media (max-width:375px) {
+              font-size: 1.5rem;
+             }
       }
 
      input{
@@ -144,6 +182,10 @@
        @media(max-width:768px) {
         padding: 0.7rem 0.5rem;
        }
+
+       @media (max-width:375px) {
+        padding: 0.5rem 0.4rem;
+       }
      }
 
      input:not(:placeholder-shown) {
@@ -156,6 +198,10 @@
       font-size: 1.3rem;
       font-weight: 200;
       letter-spacing: 2px;
+
+      @media (max-width:375px) {
+        font-size: 1.2rem;
+      }
     }
 
      textarea{
@@ -166,6 +212,10 @@
 
        @media (max-width:992px) {
         width: 80%;
+       }
+
+       @media (max-width:375px) {
+        
        }
      }
 
@@ -181,6 +231,17 @@
       @media (max-width:992px) {
         padding: 0.8rem 4rem;
         width: 40%;
+       }
+
+       @media (max-width:576px) {
+        padding: 0.6em 2rem;
+        text-align: center;
+       }
+
+       @media (max-width:375px) {
+        padding: 0.4em 2rem;
+        text-align: center;
+        font-size: 1.1rem;
        }
     
       &::before{

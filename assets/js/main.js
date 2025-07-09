@@ -90,10 +90,10 @@ fetchWeather(weatherApi);
 let skillsSection = document.querySelector(".skills");
 let skillsPrcents = document.querySelectorAll(".skills__prcent");
 
-// Funkcija koja vraća baznu širinu ovisno o širini prozora
+// A function that returns the base width depending on the window width.
 function getBaseWidth() {
   if (window.innerWidth <= 576) {
-    return 300;
+    return 200;
   } else if (window.innerWidth <= 768) {
     return 400;
   } else if (window.innerWidth <= 992) {
@@ -108,11 +108,11 @@ for (const skillPrcent of skillsPrcents) {
   let interval;
   let percentText;
 
-  // Funkcija koja pokreće animaciju širine
+  // A function that triggers the width animation.
   function startAnimation() {
-    clearInterval(interval); // zaustavi staru animaciju ako postoji
-    skillPrcent.style.width = "0px"; // reset širine
-    if (percentText) percentText.remove(); // ukloni stari tekst ako postoji
+    clearInterval(interval); // stop animation
+    skillPrcent.style.width = "0px"; // reset width
+    if (percentText) percentText.remove(); // delete old tekst
 
     let currentWidth = 0;
     let baseWidth = getBaseWidth();
@@ -137,7 +137,7 @@ for (const skillPrcent of skillsPrcents) {
     entries.forEach(entry => {
       if (entry.isIntersecting && !intervalStarted) {
         intervalStarted = true;
-        startAnimation(); // pokreni animaciju kad element uđe u viewport
+        startAnimation(); // Start the animation when the element enters the viewport.
       }
     });
   }, {
@@ -146,7 +146,7 @@ for (const skillPrcent of skillsPrcents) {
 
   observer.observe(skillsSection);
 
-  // Ponovno pokretanje animacije prilikom resize-a ako je već startana
+  // Restart the animation on resize if it has already started.
   window.addEventListener("resize", () => {
     if (intervalStarted) {
       startAnimation();
@@ -315,3 +315,18 @@ hamburgerIcon.addEventListener("click", () => {
 navList.addEventListener("click", ()=> {
   navList.classList.remove("activeHamburger");
 });
+
+// TEXTAREA CHANGE AT 375PX
+
+function adjustTextareaRows() {
+    const textarea = document.getElementById('myTextarea');
+    if (window.innerWidth <= 375) {
+      textarea.rows = 3;
+    } else {
+      textarea.rows = 6;
+    }
+  }
+
+  // Call it immediately and also on resize.
+  adjustTextareaRows();
+  window.addEventListener('resize', adjustTextareaRows);
