@@ -21,7 +21,11 @@
 
  @media(max-width:576px){
   width: 22rem;
-}
+ }
+
+ @media(max-width:375px){
+  width: 18rem;
+ }
 
   &.active {
     opacity: 1;
@@ -44,7 +48,10 @@
 
     @media(max-width:576px){
       padding: 1.5rem 1.5rem;
-      
+   }
+
+    @media(max-width:375px){
+      padding: 0.8rem 0.8rem;
    }
 
     input{
@@ -56,12 +63,20 @@
         padding: 0.5rem 0.2rem;
         font-size: 0.9;
      }
+
+      @media(max-width:375px){
+        padding: 0.3rem 0.2rem;
+     }
     }
 
     textarea{
       
       @media(max-width:576px){
         height: 5rem;
+     }
+
+     @media(max-width:375px){
+        height: 3.5rem;
      }
     }
 
@@ -91,6 +106,11 @@
       margin-top: 1rem;
       font-size: 1.1rem;
       padding: 0.8rem 5rem;
+
+      @media(max-width:375px){
+        padding: 0.5rem 3.5rem;
+        font-size: 0.9rem;
+     }
     }
 
     label{
@@ -120,6 +140,10 @@
         @media(max-width:576px){
           width: 2rem;
        }
+
+         @media(max-width:375px){
+          width: 1.5rem;
+       }
       }
 
       .modal__phoneIcon{
@@ -128,6 +152,10 @@
 
         @media(max-width:576px){
           width: 2rem;
+       }
+
+        @media(max-width:375px){
+          width: 1.5rem;
        }
       }
     }
@@ -141,6 +169,10 @@
 
     @media(max-width:576px){
       padding: 0.3rem 0.5rem;
+   }
+
+    @media(max-width:375px){
+      padding: 0.2rem 0.3rem;
    }
   }
 }
