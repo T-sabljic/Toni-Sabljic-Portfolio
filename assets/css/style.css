@@ -203,7 +203,7 @@ header .header__content {
 }
 @media (max-width: 375px) {
   header .header__content {
-    left: 1rem;
+    left: 3rem;
   }
 }
 header .header__content .header__contentInfo {
